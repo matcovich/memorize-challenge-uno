@@ -6,13 +6,53 @@
   --background: #ffffff;
   --foreground: #171717;
 }
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* 
+/* ===== Scrollbar CSS ===== */
 
-@media (prefers-color-scheme: dark) {
+::-webkit-scrollbar {
+  scrollbar-width: thin;
+  width: 6px;
+  height: 4px;
+}
+::-webkit-scrollbar-button {
+  width: 1px;
+  height: 2px;
+}
+::-webkit-scrollbar-thumb {
+  background: #666;
+  border: 1px solid #454545;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #58b0f3;
+}
+::-webkit-scrollbar-track {
+  background: #e1e1e1;
+  border: 1px none #ffffff;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #;
+}
+::-webkit-scrollbar-track:active {
+  background: #424242;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+/* =====END Scrollbar CSS ===== */
+
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   color: var(--foreground);
