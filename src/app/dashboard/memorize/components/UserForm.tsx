@@ -34,10 +34,11 @@ export default function UserForm() {
         setHasCookie(false);
     };
     if (hasCookie)  {
-        return( <div>
-            <p>Hola {getCookie('userName')}</p>
-            <button onClick={handleLogout}>Salir</button>
-            </div>);
+        return(
+            <div className="flex flex-col items-end justify-center h-full">
+                <button className="border-2 border-red-400 rounded-lg py-2 px-12 hover:bg-red-400 hover:text-white text-red-600 font-bold md:-mt-10 mb-16 " onClick={handleLogout}>Salir</button>
+            </div>
+        );
     }
 
 
@@ -45,7 +46,7 @@ return (
     <div className="flex flex-col items-center justify-center h-full">
         <form
         onSubmit={handleSubmit}
-        className="bg-white  lg:w-3/5 rounded-lg lg:rounded-2xl p-8 mt-4 lg:p-16 flex flex-col gap-6 space-y-4 shadow-lg "
+        className="bg-white border  lg:w-3/5 rounded-lg lg:rounded-2xl p-8 mt-4 lg:p-16 flex flex-col gap-6 space-y-4 shadow-lg "
         >
             <legend className=" lg:text-xl font-bold text-sky-600 uppercase text-center border-b-2 lg:border-b-4 border-sky-600 mb-6 lg:mb-0"> Ingresa tu nombre de jugador </legend>
 

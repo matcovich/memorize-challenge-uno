@@ -6,19 +6,19 @@ import Link from "next/link";
 
 export default function ProfileUser() {
     const [userName, setUserName] = useState<string | null>(null);
-    const [cookieUserName, setCookieUserName] = useState(getCookie('userName')); // Utiliza un estado para almacenar el valor de la cookie
+    const [cookieUserName, setCookieUserName] = useState(getCookie('userName'));
 
     useEffect(() => {
         setUserName(cookieUserName as string | null);
-    }, [cookieUserName]); // Utiliza el estado en el arreglo de dependencias
+    }, [cookieUserName]);
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-        const nuevoValor = getCookie('userName');
-        if (nuevoValor !== cookieUserName) {
-            setCookieUserName(nuevoValor);
+        const newValue = getCookie('userName');
+        if (newValue !== cookieUserName) {
+            setCookieUserName(newValue);
         }
-        }, 1000); // Verifica cada segundo si la cookie ha cambiado
+        }, 1000);
         return () => clearInterval(intervalId);
     }, [cookieUserName]);
 
